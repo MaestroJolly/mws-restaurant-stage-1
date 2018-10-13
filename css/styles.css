@@ -1,9 +1,18 @@
 @charset "utf-8";
 /* CSS Document */
 
-body,td,th,p{
+html,
+main {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+body,
+td,
+th,
+p{
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 10pt;
+	font-size: 1em;
 	color: #333;
 	line-height: 1.5;
 }
@@ -12,9 +21,10 @@ body {
 	margin: 0;
 	position:relative;
 }
-ul, li {
+ul, 
+li {
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 10pt;
+	font-size: 1em;
 	color: #333;
 }
 a {
@@ -42,7 +52,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 #footer {
   background-color: #444;
   color: #aaa;
-  font-size: 8pt;
+  font-size: 0.833em;
   letter-spacing: 1px;
   padding: 25px;
   text-align: center;
@@ -54,6 +64,8 @@ nav {
   height: 80px;
   background-color: #252831;
   text-align:center;
+  display: flex;
+  align-items: center;
 }
 nav h1 {
   margin: auto;
@@ -69,9 +81,25 @@ nav h1 a {
     padding: 10px 40px 16px;
     list-style: none;
     background-color: #eee;
-    font-size: 17px;
+    font-size: 1.125em;
     margin: 0;
-    width: calc(50% - 80px);
+    width: calc(100% - 80px);
+}
+
+/* filter select options Media Query for devices above 360px view port */
+
+@media screen and (min-width: 768px) {
+  .filter-options select {
+    width: 35%;
+  }
+}
+
+/* filter select options Media Query for devices above 360px view port */
+
+@media screen and (min-width: 1200px) {
+  .filter-options select {
+    width: 25%;
+  }
 }
 
 /* Display list items side by side */
@@ -102,31 +130,55 @@ nav h1 a {
   height: 400px;
   width: 100%;
   background-color: #ccc;
+  margin: 0 auto;
 }
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
   width: 100%;
   height: 50px;
+  padding: 40px 0 40px 0;
   background-color: #3397DB;
   align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .filter-options h2 {
   color: white;
   font-size: 1rem;
   font-weight: normal;
   line-height: 1;
+  letter-spacing: 2px;
+  text-align: center;
   margin: 0 20px;
+  width: 100%;
 }
 .filter-options select {
   background-color: white;
   border: 1px solid #fff;
   font-family: Arial,sans-serif;
-  font-size: 11pt;
+  font-size: 1.417em;
   height: 35px;
   letter-spacing: 0;
-  margin: 10px;
+  margin: 5px 10px 10px 10px;
   padding: 0 10px;
-  width: 200px;
+  width: 40%;
+}
+
+/* filter select options Media Query for devices above 360px view port */
+
+@media screen and (min-width: 768px) {
+  .filter-options select {
+    width: 35%;
+  }
+}
+
+/* filter select options Media Query for devices above 360px view port */
+
+@media screen and (min-width: 1200px) {
+  .filter-options select {
+    width: 25%;
+  }
 }
 
 /* ====================== Restaurant Listing ====================== */
@@ -136,45 +188,72 @@ nav h1 a {
   margin: 0;
   padding: 30px 15px 60px;
   text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
 }
 #restaurants-list li {
   background-color: #fff;
   border: 2px solid #ccc;
   font-family: Arial,sans-serif;
-  margin: 15px;
+  margin: 10px;
   min-height: 380px;
   padding: 0 30px 25px;
-  text-align: left;
-  width: 270px;
+  width: calc(33% - 24px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+/* restaurant lists Media Query for devices above 360px view port */
+
+@media screen and (min-width: 768px) {
+  #restaurants-list li {
+    width: 34%;
+  }
+}
+
+/* restaurant lists Media Query for devices above 1200px view port */
+
+@media screen and (min-width: 1200px) {
+  #restaurants-list li {
+    width: 25%;
+  }
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
   display: block;
   margin: 0;
   max-width: 100%;
-  min-height: 248px;
+  min-height: 200px;
   min-width: 100%;
 }
 #restaurants-list li h1 {
   color: #f18200;
   font-family: Arial,sans-serif;
-  font-size: 14pt;
+  font-size: 1.333em;
   font-weight: 200;
   letter-spacing: 0;
   line-height: 1.3;
   margin: 20px 0 10px;
   text-transform: uppercase;
+    padding: 0 5px;
 }
 #restaurants-list p {
   margin: 0;
-  font-size: 11pt;
+  font-size: 1.083em;
 }
 #restaurants-list li a {
   background-color: orange;
   border-bottom: 3px solid #eee;
   color: #fff;
   display: inline-block;
-  font-size: 10pt;
+  font-size: 1em;
   margin: 15px 0 0;
   padding: 8px 30px 10px;
   text-align: center;
@@ -188,6 +267,10 @@ nav h1 a {
   top: 0;
   width: 100%;
   z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 1px 2px rgba(0, 0, 0, 0.1);
 }
 .inside #map-container {
   background: blue none repeat scroll 0 0;
@@ -195,7 +278,17 @@ nav h1 a {
   position: fixed;
   right: 0;
   top: 80px;
-  width: 50%;
+  width: 100%;
+}
+
+
+/* filter select options Media Query for devices above 1200px view port */
+
+@media screen and (min-width: 1200px) {
+  .inside #map-container {
+    width: 50%;
+    padding: 140px 40px 30px 0;
+  }
 }
 .inside #map {
   background-color: #ccc;
@@ -205,12 +298,12 @@ nav h1 a {
 .inside #footer {
   bottom: 0;
   position: absolute;
-  width: 50%;
+  width: 100%;
 }
 #restaurant-name {
   color: #f18200;
   font-family: Arial,sans-serif;
-  font-size: 20pt;
+  font-size: 1.833em;
   font-weight: 200;
   letter-spacing: 0;
   margin: 15px 0 30px;
@@ -218,36 +311,48 @@ nav h1 a {
   line-height: 1.1;
 }
 #restaurant-img {
-	width: 90%;
+	width: 100%;
 }
 #restaurant-address {
-  font-size: 12pt;
+  font-size: 1.167em;
   margin: 10px 0px;
 }
 #restaurant-cuisine {
   background-color: #333;
   color: #ddd;
-  font-size: 12pt;
+  font-size: 1.167em;
   font-weight: 300;
   letter-spacing: 10px;
   margin: 0 0 20px;
   padding: 2px 0;
   text-align: center;
   text-transform: uppercase;
-	width: 90%;
+	width: 100%;
 }
-#restaurant-container, #reviews-container {
+#restaurant-container, 
+#reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
   padding: 140px 40px 30px;
-  width: 50%;
+  width: 100%;
 }
+
+/* filter select options Media Query for devices above 1200px view port */
+
+@media screen and (min-width: 1200px) {
+#restaurant-container,
+#reviews-container {
+    width: 50%;
+  }
+}
+
+
 #reviews-container {
   padding: 30px 40px 80px;
 }
 #reviews-container h2 {
   color: #f58500;
-  font-size: 24pt;
+  font-size: 2em;
   font-weight: 300;
   letter-spacing: -1px;
   padding-bottom: 1pt;
@@ -272,4 +377,16 @@ nav h1 a {
 }
 #restaurant-hours td {
   color: #666;
+}
+
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  z-index: 1001;
+}
+
+.skip-link:focus {
+  top: 0;
 }
