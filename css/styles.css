@@ -38,7 +38,12 @@ a:hover, a:focus {
 a img{
 	border: none 0px #fff;
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0 0 20px;
 }
@@ -72,7 +77,7 @@ nav h1 {
 }
 nav h1 a {
   color: #fff;
-  font-size: 14pt;
+  font-size: 1.083em;
   font-weight: 200;
   letter-spacing: 10px;
   text-transform: uppercase;
@@ -83,22 +88,12 @@ nav h1 a {
     background-color: #eee;
     font-size: 1.125em;
     margin: 0;
-    width: calc(100% - 80px);
+    width: 100vw;
 }
 
-/* filter select options Media Query for devices above 360px view port */
-
-@media screen and (min-width: 768px) {
-  .filter-options select {
-    width: 35%;
-  }
-}
-
-/* filter select options Media Query for devices above 360px view port */
-
-@media screen and (min-width: 1200px) {
-  .filter-options select {
-    width: 25%;
+@media screen and (min-width: 769px) {
+  #breadcrumb {
+    padding-left: 60px;
   }
 }
 
@@ -162,23 +157,7 @@ nav h1 a {
   letter-spacing: 0;
   margin: 5px 10px 10px 10px;
   padding: 0 10px;
-  width: 40%;
-}
-
-/* filter select options Media Query for devices above 360px view port */
-
-@media screen and (min-width: 768px) {
-  .filter-options select {
-    width: 35%;
-  }
-}
-
-/* filter select options Media Query for devices above 360px view port */
-
-@media screen and (min-width: 1200px) {
-  .filter-options select {
-    width: 25%;
-  }
+  width: 20%;
 }
 
 /* ====================== Restaurant Listing ====================== */
@@ -199,18 +178,18 @@ nav h1 a {
   background-color: #fff;
   border: 2px solid #ccc;
   font-family: Arial,sans-serif;
-  margin: 10px;
+  margin: 15px;
   min-height: 380px;
   padding: 0 30px 25px;
-  width: calc(33% - 24px);
+  text-align: left;
+  width: 100%;
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
-
-/* restaurant lists Media Query for devices above 360px view port */
+/* Restaurant list  Media Query for devices above 768px view port */
 
 @media screen and (min-width: 768px) {
   #restaurants-list li {
@@ -218,7 +197,7 @@ nav h1 a {
   }
 }
 
-/* restaurant lists Media Query for devices above 1200px view port */
+/* Restaurant list Media Query for devices above 1200px view port */
 
 @media screen and (min-width: 1200px) {
   #restaurants-list li {
@@ -273,23 +252,24 @@ nav h1 a {
   box-shadow: 0 2px 1px 2px rgba(0, 0, 0, 0.1);
 }
 .inside #map-container {
-  background: blue none repeat scroll 0 0;
-  height: 87%;
-  position: fixed;
-  right: 0;
-  top: 80px;
-  width: 100%;
+  top: 130px;
+  position: relative;
+  height: 300px;
+  width: 100vw;
 }
 
 
-/* filter select options Media Query for devices above 1200px view port */
-
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 769px) {
   .inside #map-container {
+    background: blue none repeat scroll 0 0;
+    height: 87%;
+    position: fixed;
+    right: 0;
+    top: 80px;
     width: 50%;
-    padding: 140px 40px 30px 0;
   }
 }
+
 .inside #map {
   background-color: #ccc;
   height: 100%;
@@ -297,7 +277,7 @@ nav h1 a {
 }
 .inside #footer {
   bottom: 0;
-  position: absolute;
+  position: relative;
   width: 100%;
 }
 #restaurant-name {
@@ -327,29 +307,50 @@ nav h1 a {
   padding: 2px 0;
   text-align: center;
   text-transform: uppercase;
-	width: 100%;
-}
-#restaurant-container, 
-#reviews-container {
-  border-bottom: 1px solid #d9d9d9;
-  border-top: 1px solid #fff;
-  padding: 140px 40px 30px;
-  width: 100%;
+  width: 100vw;
 }
 
-/* filter select options Media Query for devices above 1200px view port */
 
-@media screen and (min-width: 1200px) {
-#restaurant-container,
-#reviews-container {
-    width: 50%;
+@media screen and (min-width: 769px) {
+  #restaurant-cuisine {
+    width: 100%;
   }
 }
 
+  .inside #restaurant-container {
+    position: relative;
+    width: 100vw;
+    padding: 140px 5px 0 0;
+    margin: auto;
+    text-align: center;
+  }
 
-#reviews-container {
-  padding: 30px 40px 80px;
+.inside #reviews-container {
+  width: 100vw;
+  padding: 5px;
+  margin: auto;
 }
+
+@media screen and (min-width: 769px) {
+  .inside #restaurant-container {
+    position: relative;
+    width: 50%;
+    padding: 100px 5px 0 0;
+    left: -350px;
+    top: 80px;
+    width: 45%;
+  }
+
+  .inside #reviews-container {
+    position: relative;
+    width: 50%;
+    left: -350px;
+    top: 80px;
+    width: 45%;
+  }
+
+}
+
 #reviews-container h2 {
   color: #f58500;
   font-size: 2em;
@@ -376,6 +377,7 @@ nav h1 a {
   margin: 0 0 10px;
 }
 #restaurant-hours td {
+  padding-left: 30px;
   color: #666;
 }
 

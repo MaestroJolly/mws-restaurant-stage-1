@@ -6,8 +6,9 @@ Restaurant Review App is a responsive mobile friendly offline first application 
 
 - [Prerequisite](prerequisites)
 - [Installation](#installation)
-- [Link](#link)
+- [Credits](#credits)
 - [Contributions](#contribution)
+- [License](#license)
 
 ## Prerequisites
 
@@ -22,10 +23,17 @@ To install the project and run locally, follow the following;
 - Enter this command in your terminal to start the server locally - `python -m http.server 8000`.
 - Enter this url into the browser for the website to display `http://localhost:8000`
 
-## Link
+## Credits
 
-To view this website currently running online, [Click Here](https://github.io/MaestroJolly/restaurant-review-app)
+- [Udacity](https://github.com/udacity/mws-restaurant-stage-1) - For starter code
+- [Mapbox](https://www.mapbox.com/) - For the implementation of map features
+- [Leafletjs](https://leafletjs.com/) - Open source javascript library
+
 
 ## Contributions
 
 This project is an udacity project but can be used as a reference and contributed to, if contributed to, send a PR.
+
+## License
+
+The contents of this repository are covered under the MIT License.
